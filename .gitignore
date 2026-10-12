@@ -1,0 +1,5 @@
+# Git ignore for Omarchy theme
+candidates/
+*.tmp
+*.bak
+.DS_Store
