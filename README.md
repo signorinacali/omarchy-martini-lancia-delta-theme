@@ -24,12 +24,80 @@ Omarchy will automatically clone the theme, generate matching configurations acr
 
 | Swatch | Color Name | Hex Code | Role |
 |:---:|---|---|---|
-| 🟦 | **Deep Navy** | `#121a28` | Background (dark, easy on eyes) |
-| 🩵 | **Sky Blue** | `#89b4fa` | Primary Accent / Active borders |
-| 🟥 | **Racing Red** | `#fa8989` | Secondary Accent / Highlights |
-| ⬜ | **Crisp White** | `#e8eaed` | Foreground / Text |
-| 🪨 | **Muted Slate** | `#455e87` | Inactive borders / Muted text |
-| ⬛ | **Darker Navy** | `#0e141e` | Status bars / Sidebar contrast |
+| 🟦 | **Martini Deep Navy** | `#04255A` | Border Base / Contrast |
+| 🩵 | **Martini Electric Cyan** | `#21A5F6` | Primary Accent / Vinyl Stripe |
+| ⬜ | **Rally White** | `#FFFFFF` | Pinstripe Accent / Bodywork highlight |
+| 🟥 | **Martini Racing Red** | `#E4002B` | Core Livery Stripe / Highlights |
+| 🌌 | **Dark Slate Navy** | `#121a28` | Window Background |
+| ⬛ | **Midnight Dark Navy** | `#0e141e` | Status bars / Sidebar contrast |
+
+---
+
+## 🏁 Rotating Martini Livery Border & Rounded Windows (Rice)
+
+For the full motorsport rice experience — including **rounded windows**, **3px border width**, and the **continuously rotating Martini Racing ribbon** — add this block to the bottom of `~/.config/hypr/hyprland.lua` (or `~/.config/hypr/looknfeel.lua`):
+
+```lua
+-- ── Lancia Delta HF Integrale: Martini Racing Livery Border Gradient ──
+local martini_active_border = {
+  colors = {
+    "rgba(04255AF2)", -- Deep Navy Blue
+    "rgba(21A5F6F2)", -- Martini Electric Cyan
+    "rgba(FFFFFFF2)", -- Rally White Accent
+    "rgba(E4002BF2)", -- Martini Racing Red Center
+    "rgba(FFFFFFF2)", -- Rally White Accent
+    "rgba(21A5F6F2)", -- Martini Electric Cyan
+    "rgba(04255AF2)", -- Deep Navy Blue
+  },
+  angle = 45,
+}
+
+local martini_inactive_border = {
+  colors = {
+    "rgba(04255A66)",
+    "rgba(21A5F644)",
+    "rgba(E4002B33)",
+    "rgba(04255A66)",
+  },
+  angle = 45,
+}
+
+hl.config({
+  general = {
+    col = {
+      active_border = martini_active_border,
+      inactive_border = martini_inactive_border,
+    },
+    border_size = 3,
+    gaps_in = 6,
+    gaps_out = 14,
+  },
+  decoration = {
+    rounding = 14,      -- Smooth curved window corners
+    dim_inactive = true,
+    dim_strength = 0.12,
+  },
+  group = {
+    col = {
+      border_active = martini_active_border,
+      border_inactive = martini_inactive_border,
+      border_locked_active = martini_active_border,
+      border_locked_inactive = martini_inactive_border,
+    },
+  },
+})
+
+-- Smooth circular animation: slowly rotates the Martini Racing vinyl stripes around the border
+hl.animation({
+  leaf = "borderangle",
+  enabled = true,
+  speed = 100,      -- ~10s per full rotation (smooth & ambient)
+  bezier = "linear", -- Constant speed, zero stutter
+  style = "loop",   -- Continuous loop
+})
+```
+
+> **Performance Note**: The animation is executed purely via GPU fragment shaders in Hyprland with zero extra RAM impact (~0 MB). Hyprland automatically hot-reloads on save!
 
 ---
 
