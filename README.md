@@ -1,14 +1,14 @@
-# 🏁 Martini Lancia Delta — Omarchy Theme
+# Martini Lancia Delta — Omarchy Theme
 
 ![Preview](preview.png)
 
-A motorsport-inspired theme for [Omarchy Linux](https://omarchy.org/) celebrating the legendary **Lancia Delta HF Integrale** in its iconic **Martini Racing** livery.
+A motorsport/rally-inspired theme for [Omarchy Linux](https://omarchy.org/) celebrating the legendary **Lancia Delta HF Integrale** in its iconic **Martini Racing** livery.
 
 Built for high performance, sharp angles, and distraction-free terminal work with a deep navy backdrop, electric sky blue accents, and signature racing red highlights.
 
 ---
 
-## ⚡ Quick Install
+## Quick Install
 
 Install directly via Omarchy CLI:
 
@@ -20,7 +20,7 @@ Omarchy will automatically clone the theme, generate matching configurations acr
 
 ---
 
-## 🎨 Color Palette
+## Color Palette
 
 | Swatch | Color Name | Hex Code | Role |
 |:---:|---|---|---|
@@ -33,7 +33,7 @@ Omarchy will automatically clone the theme, generate matching configurations acr
 
 ---
 
-## 🏁 Rotating Martini Livery Border & Rounded Windows (Rice)
+## Rotating Martini Livery Border & Rounded Windows (Rice)
 
 For the full motorsport rice experience — including **rounded windows**, **3px border width**, and the **continuously rotating Martini Racing ribbon** — add this block to the bottom of `~/.config/hypr/hyprland.lua` (or `~/.config/hypr/looknfeel.lua`):
 
@@ -97,11 +97,11 @@ hl.animation({
 })
 ```
 
-> **Performance Note**: The animation is executed purely via GPU fragment shaders in Hyprland with zero extra RAM impact (~0 MB). Hyprland automatically hot-reloads on save!
+> **Performance Note**: The animation is executed purely via GPU fragment shaders in Hyprland with zero extra RAM impact (~0 MB). Hyprland automatically hot-reloads on save.
 
 ---
 
-## 🖼️ Included Wallpapers
+## Included Wallpapers
 
 The theme includes a diverse set of 5 wallpapers covering different desktop moods:
 
@@ -121,7 +121,7 @@ omarchy theme bg next
 
 ---
 
-## 🛠️ Manual Installation (Local)
+## Manual Installation (Local)
 
 If you have cloned this repository manually:
 
@@ -135,7 +135,7 @@ omarchy theme set "Martini Lancia Delta"
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the [MIT License](LICENSE).
 Wallpapers and rally imagery remain copyright of their respective creators and are included for personal desktop use.
